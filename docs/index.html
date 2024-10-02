@@ -19,10 +19,58 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- jQuery für Bildwechsel -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <script type="text/javascript" src="assets/jquery.images-compare.js"></script>
 
+    <script type="text/javascript">
+        $(document).ready(function() {
+        $(function () {
+            var imagesCompareElement = $('.js-img-compare').imagesCompare();
+            var imagesCompare = imagesCompareElement.data('imagesCompare');
+            var events = imagesCompare.events();
+            imagesCompare.on(events.changed, function (event) {
+                console.log(events.changed);
+                console.log(event.ratio);
+                if (event.ratio < 0.4) {
+                    console.log('We see more than half of the back image');
+                }
+                if (event.ratio > 0.6) {
+                    console.log('We see more than half of the front image');
+                }
+                if (event.ratio <= 0) {
+                    console.log('We see completely back image');
+                }
+                if (event.ratio >= 1) {
+                    console.log('We see completely front image');
+                }
+            });
+            $('.js-front-btn').on('click', function (event) {
+                event.preventDefault();
+                imagesCompare.setValue(1, true);
+            });
+            $('.js-back-btn').on('click', function (event) {
+                event.preventDefault();
+                imagesCompare.setValue(0, true);
+            });
+            $('.js-toggle-btn').on('click', function (event) {
+                event.preventDefault();
+                if (imagesCompare.getValue() >= 0 && imagesCompare.getValue() < 1) {
+                    imagesCompare.setValue(1, true);
+                } else {
+                    imagesCompare.setValue(0, true);
+                }
+            });
+        });
+        });
+
+    </script>
 </head>
 
 <body>
+
+
+
 <div class="container">
     <br>
     <br>
@@ -320,48 +368,7 @@
     </div>
 </div>
 
-<!-- jQuery für Bildwechsel -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
-<script type="text/javascript" src="https://github.com/HannahHaensen/SCGS/blob/gh-pages/docs/assets/jquery.images-compare.js"></script>
-<script type="text/javascript">
-    $(function () {
-        var imagesCompareElement = $('.js-img-compare').imagesCompare();
-        var imagesCompare = imagesCompareElement.data('imagesCompare');
-        var events = imagesCompare.events();
-        imagesCompare.on(events.changed, function (event) {
-            console.log(events.changed);
-            console.log(event.ratio);
-            if (event.ratio < 0.4) {
-                console.log('We see more than half of the back image');
-            }
-            if (event.ratio > 0.6) {
-                console.log('We see more than half of the front image');
-            }
-            if (event.ratio <= 0) {
-                console.log('We see completely back image');
-            }
-            if (event.ratio >= 1) {
-                console.log('We see completely front image');
-            }
-        });
-        $('.js-front-btn').on('click', function (event) {
-            event.preventDefault();
-            imagesCompare.setValue(1, true);
-        });
-        $('.js-back-btn').on('click', function (event) {
-            event.preventDefault();
-            imagesCompare.setValue(0, true);
-        });
-        $('.js-toggle-btn').on('click', function (event) {
-            event.preventDefault();
-            if (imagesCompare.getValue() >= 0 && imagesCompare.getValue() < 1) {
-                imagesCompare.setValue(1, true);
-            } else {
-                imagesCompare.setValue(0, true);
-            }
-        });
-    });
-</script>
+
 
 </body>
 </html>
