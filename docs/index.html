@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
 </head>
 
@@ -26,23 +26,26 @@
 <div class="container">
     <br>
     <br>
-    <h1 style="align-content: center; text-align: center">Semantics-Controlled Gaussian Splatting for Outdoor Scene Reconstruction and Rendering in Virtual Reality</h1>
+    <h1 style="align-content: center; text-align: center">Semantics-Controlled Gaussian Splatting for Outdoor Scene
+        Reconstruction and Rendering in Virtual Reality</h1>
     <h5></h5>
 
 
     <div class="row" style="align-content: center; text-align: center">
-        <div class="col-md-12">        <img src="https://github.com/HannahHaensen/SCGS/blob/gh-pages/docs/assets/teaser.png?raw=true"
-             style="width: 70%"></div>
+        <div class="col-md-12"><img
+                src="https://github.com/HannahHaensen/SCGS/blob/gh-pages/docs/assets/teaser.png?raw=true"
+                style="width: 70%">
+        </div>
 
     </div>
     <br>
     <div class="row" style="align-content: center; text-align: center">
         <div class="col-md-12">
             <b><a href="">Hannah Schieber
-            <sup>1,3</sup></a>, Jacob Young
-            <sup>2</sup>, Tobias Langlotz
-            <sup>2</sup>, Stefanie Zollmann
-              <sup>2</sup>, and Daniel Roth<sup>3</sup></b>
+                <sup>1,3</sup></a>, Jacob Young
+                <sup>2</sup>, Tobias Langlotz
+                <sup>2</sup>, Stefanie Zollmann
+                <sup>2</sup>, and Daniel Roth<sup>3</sup></b>
         </div>
     </div>
     <br>
@@ -57,7 +60,8 @@
             <sup>2</sup>
         </div>
         <div class="col-md-4 col-sm-12">
-Technical University of Munich, School of Medicine and Health, Klinikum rechts der Isar, Orthopaedics and Sports Orthopaedics, Munich, Germany
+            Technical University of Munich, School of Medicine and Health, Klinikum rechts der Isar, Orthopaedics and
+            Sports Orthopaedics, Munich, Germany
             <sup>3</sup>
         </div>
     </div>
@@ -87,7 +91,20 @@ Technical University of Munich, School of Medicine and Health, Klinikum rechts d
     <div class="row">
         <h3>Abstract</h3>
         <div class="col-md-12">
-           Advancements in 3D rendering like Gaussian Splatting (GS) allow novel view synthesis and real-time rendering in virtual reality (VR). However, GS-created 3D environments are often difficult to edit. For scene enhancement or to incorporate 3D assets, segmenting Gaussians by class is essential. Existing segmentation approaches are typically limited to certain types of scenes, e.g., ''circular'' scenes, to determine clear object boundaries. However, this method is ineffective when removing large objects in non-''circling'' scenes such as large outdoor scenes. We propose Semantics-Controlled GS (SCGS), a segmentation-driven GS approach, enabling the separation of large scene parts in uncontrolled, natural environments. SCGS allows scene editing and the extraction of scene parts for VR. Additionally, we introduce a challenging outdoor dataset, overcoming the ''circling'' setup. We outperform the state-of-the-art in visual quality on our dataset and in segmentation quality on the 3D-OVS dataset. We conducted an exploratory user study, comparing a 360-video, plain GS, and SCGS in VR with a fixed viewpoint. In our subsequent main study, users were allowed to move freely, evaluating plain GS and SCGS. Our main study results show that participants clearly prefer SCGS over plain GS. We overall present an innovative approach that surpasses the state-of-the-art both technically and in user experience.
+            Advancements in 3D rendering like Gaussian Splatting (GS) allow novel view synthesis and real-time rendering
+            in virtual reality (VR). However, GS-created 3D environments are often difficult to edit. For scene
+            enhancement or to incorporate 3D assets, segmenting Gaussians by class is essential. Existing segmentation
+            approaches are typically limited to certain types of scenes, e.g., ''circular'' scenes, to determine clear
+            object boundaries. However, this method is ineffective when removing large objects in non-''circling''
+            scenes such as large outdoor scenes. We propose Semantics-Controlled GS (SCGS), a segmentation-driven GS
+            approach, enabling the separation of large scene parts in uncontrolled, natural environments. SCGS allows
+            scene editing and the extraction of scene parts for VR. Additionally, we introduce a challenging outdoor
+            dataset, overcoming the ''circling'' setup. We outperform the state-of-the-art in visual quality on our
+            dataset and in segmentation quality on the 3D-OVS dataset. We conducted an exploratory user study, comparing
+            a 360-video, plain GS, and SCGS in VR with a fixed viewpoint. In our subsequent main study, users were
+            allowed to move freely, evaluating plain GS and SCGS. Our main study results show that participants clearly
+            prefer SCGS over plain GS. We overall present an innovative approach that surpasses the state-of-the-art
+            both technically and in user experience.
         </div>
     </div>
     <br>
@@ -98,13 +115,177 @@ Technical University of Munich, School of Medicine and Health, Klinikum rechts d
     </div>
     <div class="row">
         <div class="col-md-12">
-            <img style="width: 100%" src="https://github.com/HannahHaensen/SCGS/blob/gh-pages/docs/assets/arch.jpg?raw=true">
+            <img style="width: 100%"
+                 src="https://github.com/HannahHaensen/SCGS/blob/gh-pages/docs/assets/arch.jpg?raw=true">
         </div>
     </div>
-        <br>
+    <br>
     <br>
     <div class="row">
-    <h3>SCGS in Virtual Reality</h3>
+        <h3>Evaluation</h3>
+        <div class="container">
+
+            <br>
+            <hr>
+            <h5>Novel View Synthesis</h5>
+            <br>
+            <div class="row">
+
+                <div class="col-lg-6 col-sm-12">
+                    <span>Outback Scene</span>
+                    <br>
+                    <!-- Beginn Bildwechsel -->
+                    <div class="js-img-compare">
+                        <div style="display: none;">
+                            <span class="images-compare-label">Gaussian Grouping</span>
+                            <img src="assets/gg/00002.png" alt="Before">
+                        </div>
+                        <div>
+                            <span class="images-compare-label">Ours</span>
+                            <img src="assets/ours/00002.png" alt="After">
+                        </div>
+                    </div>
+                    <!-- Ende Bildwechsel -->
+                </div>
+                <div class="col-lg-6 col-sm-12">
+                    <span>Outback Scene</span>
+                    <br>
+                    <!-- Beginn Bildwechsel -->
+                    <div class="js-img-compare">
+                        <div style="display: none;">
+                            <span class="images-compare-label">Gaussian Grouping <br> (improved labels)</span>
+                            <img src="assets/ggours/00002.png" alt="Before">
+                        </div>
+                        <div>
+                            <span class="images-compare-label">Ours</span>
+                            <img src="assets/ours/00002.png" alt="After">
+                        </div>
+                    </div>
+                    <!-- Ende Bildwechsel -->
+                </div>
+            </div>
+
+            <br>
+            <hr>
+            <div class="row">
+                <div class="col-lg-6 col-sm-12">
+                    <span>Lake Scene</span>
+                    <br>
+                    <!-- Beginn Bildwechsel -->
+                    <div class="js-img-compare">
+                        <div style="display: none;">
+                            <span class="images-compare-label">Gaussian Grouping</span>
+                            <img src="assets/gg/00023.png" alt="Before">
+                        </div>
+                        <div>
+                            <span class="images-compare-label">Ours</span>
+                            <img src="assets/ours/00023.png" alt="After">
+                        </div>
+                    </div>
+                    <!-- Ende Bildwechsel -->
+                </div>
+                <div class="col-lg-6 col-sm-12">
+                    <span>Open Sea Scene</span>
+                    <br>
+                    <!-- Beginn Bildwechsel -->
+                    <div class="js-img-compare">
+                        <div style="display: none;">
+                            <span class="images-compare-label">Gaussian Grouping</span>
+                            <img src="assets/gg/00011.png" alt="Before">
+                        </div>
+                        <div>
+                            <span class="images-compare-label">Ours</span>
+                            <img src="assets/ours/00011.png" alt="After">
+                        </div>
+                    </div>
+                    <!-- Ende Bildwechsel -->
+                </div>
+            </div>
+
+            <br>
+            <hr>
+            <h5>Object removal examples on the Short Ride scene</h5>
+            <br>
+            <div class="row">
+                <div class="col-lg-6 col-sm-12">
+                    <!-- Beginn Bildwechsel -->
+                    <div class="js-img-compare">
+                        <div style="display: none;">
+                            <span class="images-compare-label">Gaussian Grouping  <br> (improved labels)  <br> (convex hull)</span>
+                            <img src="assets/gg/removal.png" alt="Before">
+                        </div>
+                        <div>
+                            <span class="images-compare-label">Ours</span>
+                            <img src="assets/ours/removal.png" alt="After">
+                        </div>
+                    </div>
+                    <!-- Ende Bildwechsel -->
+                </div>
+                <div class="col-lg-6 col-sm-12">
+                    <!-- Beginn Bildwechsel -->
+                    <div class="js-img-compare">
+                        <div style="display: none;">
+                            <span class="images-compare-label">Gaussian Grouping <br> (improved labels)  <br> (direct removal)</span>
+                            <img src="assets/gg/removal_our_methd.png" alt="Before">
+                        </div>
+                        <div>
+                            <span class="images-compare-label">Ours</span>
+                            <img src="assets/ours/removal.png" alt="After">
+                        </div>
+                    </div>
+                    <!-- Ende Bildwechsel -->
+                </div>
+            </div>
+
+            <br>
+            <hr>
+            <h5>Object Removal on other scenes</h5>
+            <br>
+            <div class="row">
+                <div class="col-lg-6 col-sm-12">
+                    <span>Street Scene shot with Insta360 X1</span>
+                    <br>
+                    <!-- Beginn Bildwechsel -->
+                    <div class="js-img-compare">
+                        <div style="display: none;">
+                            <span class="images-compare-label">Full (Ours)</span>
+                            <img src="assets/ours/street_full.png" alt="Before">
+                        </div>
+                        <div>
+                            <span class="images-compare-label">Removed (Ours)</span>
+                            <img src="assets/ours/street_removed.png" alt="After">
+                        </div>
+                    </div>
+                    <!-- Ende Bildwechsel -->
+                </div>
+                <div class="col-lg-6 col-sm-12">
+                    <span>Park Scene shot with an iPhone 13 mini</span>
+                    <br>
+                    <!-- Beginn Bildwechsel -->
+                    <div class="js-img-compare">
+                        <div style="display: none;">
+                            <span class="images-compare-label">Gaussian Grouping</span>
+                            <img src="assets/gg/00011.png" alt="Before">
+                        </div>
+                        <div>
+                            <span class="images-compare-label">Ours</span>
+                            <img src="assets/ours/00011.png" alt="After">
+                        </div>
+                    </div>
+                    <!-- Ende Bildwechsel -->
+                </div>
+            </div>
+
+        </div>
+        <br>
+        <br>
+        <br>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+
+        <h3>SCGS in Virtual Reality</h3>
 
         <br>
         <div class="col-md-12">
@@ -114,7 +295,8 @@ Technical University of Munich, School of Medicine and Health, Klinikum rechts d
     </div>
     <div class="row">
         <div class="col-md-12">
-            <img style="width: 100%" src="https://github.com/HannahHaensen/SCGS/blob/gh-pages/docs/assets/con_main.jpg?raw=true">
+            <img style="width: 100%"
+                 src="https://github.com/HannahHaensen/SCGS/blob/gh-pages/docs/assets/con_main.jpg?raw=true">
         </div>
     </div>
     <br>
@@ -122,22 +304,64 @@ Technical University of Munich, School of Medicine and Health, Klinikum rechts d
     <h3>Citation</h3>
     <div class="row">
         <div class="col-md-12">
-                <p style="background: lightgray; margin: 10px; padding: 10px;">
-                    @misc{schieber2024semanticscontrolledgaussiansplattingoutdoor,
-      title={Semantics-Controlled Gaussian Splatting for Outdoor Scene Reconstruction and Rendering in Virtual Reality}, 
-      author={Hannah Schieber and Jacob Young and Tobias Langlotz and Stefanie Zollmann and Daniel Roth},
-      year={2024},
-      eprint={2409.15959},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2409.15959}, 
-}
-                </p>
+            <p style="background: lightgray; margin: 10px; padding: 10px;">
+                @misc{schieber2024semanticscontrolledgaussiansplattingoutdoor,  <br>
+                &nbsp&nbsp title={Semantics-Controlled Gaussian Splatting for Outdoor Scene Reconstruction and Rendering in Virtual
+                Reality},  <br>
+                &nbsp&nbsp author={Hannah Schieber and Jacob Young and Tobias Langlotz and Stefanie Zollmann and Daniel Roth},  <br>
+                &nbsp&nbsp year={2024},  <br>
+                &nbsp&nbspeprint={2409.15959},  <br>
+                &nbsp&nbsparchivePrefix={arXiv},  <br>
+                &nbsp&nbspprimaryClass={cs.CV}, <br>
+                &nbsp&nbspurl={https://arxiv.org/abs/2409.15959},  <br>
+                }
+            </p>
         </div>
     </div>
 </div>
-</div>
 
+<!-- jQuery für Bildwechsel -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+<script type="text/javascript" src="assets/jquery.images-compare.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var imagesCompareElement = $('.js-img-compare').imagesCompare();
+        var imagesCompare = imagesCompareElement.data('imagesCompare');
+        var events = imagesCompare.events();
+        imagesCompare.on(events.changed, function (event) {
+            console.log(events.changed);
+            console.log(event.ratio);
+            if (event.ratio < 0.4) {
+                console.log('We see more than half of the back image');
+            }
+            if (event.ratio > 0.6) {
+                console.log('We see more than half of the front image');
+            }
+            if (event.ratio <= 0) {
+                console.log('We see completely back image');
+            }
+            if (event.ratio >= 1) {
+                console.log('We see completely front image');
+            }
+        });
+        $('.js-front-btn').on('click', function (event) {
+            event.preventDefault();
+            imagesCompare.setValue(1, true);
+        });
+        $('.js-back-btn').on('click', function (event) {
+            event.preventDefault();
+            imagesCompare.setValue(0, true);
+        });
+        $('.js-toggle-btn').on('click', function (event) {
+            event.preventDefault();
+            if (imagesCompare.getValue() >= 0 && imagesCompare.getValue() < 1) {
+                imagesCompare.setValue(1, true);
+            } else {
+                imagesCompare.setValue(0, true);
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
