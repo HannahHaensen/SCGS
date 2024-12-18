@@ -13,3 +13,7 @@ Advancements in 3D rendering like Gaussian Splatting (GS) allow novel view synth
 
 ![image](https://github.com/HannahHaensen/SCGS/blob/gh-pages/docs/assets/dataset.png?raw=true)
 
+Our approach was compared with [Gaussian Grouping](https://github.com/lkeab/gaussian-grouping)
+
+We also tested other online available code for example: [gaussian_semantics](https://github.com/shahanneda/gaussian_semantics). For Gaussian Semantics we compared the OpenSea scene resulting in PSNR of 27.85 and SSIM of 0.840 compared to ours with a PSNR of 28.85 and SSIM of 0.840.
+
