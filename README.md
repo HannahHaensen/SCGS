@@ -15,6 +15,10 @@ Gaussian Splatting training code, we adapted the rasterizer and will provide the
 
 TBA
 
+## Renderings
+
+Via OSF we provide the renderings of our approach for comparison with other approaches in NVS in our dataset.
+
 ## Dataset
 
 [Link to OSF](https://osf.io/s9uvy/?view_only=eff198d8752840e69a9f2b8c1c10b0a0)
