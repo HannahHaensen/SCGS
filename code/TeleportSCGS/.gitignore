@@ -1,0 +1,78 @@
+# Ignore user-specific and temporary files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore Binaries and Intermediate folders
+Binaries/
+Intermediate/
+DerivedDataCache/
+Saved/
+
+# Ignore project-specific settings
+Config/DefaultEditorPerProjectUserSettings.ini
+Config/DefaultEditor.ini
+
+# Ignore Unreal Engine-generated files
+*.aps
+*.ncb
+*.log
+*.pdb
+*.obj
+*.dat
+*.ddc
+*.dump
+*.ipch
+*.iobj
+*.ipdb
+
+# Ignore build files
+.vscode/
+.idea/
+*.VC.db
+*.sdf
+Build/
+
+# Ignore compiled binaries
+*.dll
+*.exe
+*.lib
+*.app
+*.dylib
+*.so
+*.a
+*.cso
+*.pdb
+*.zip
+
+# Ignore auto-generated asset files
+*.generated.h
+*.generated.cpp
+
+# Ignore the .vs folder for Visual Studio projects
+.vs/
+
+# Ignore UAsset and UMap files (optional, if storing source assets only)
+# Content/**/*.uasset
+# Content/**/*.umap
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore Windows system files
+Thumbs.db
+Desktop.ini
+
+# Ignore Unreal Engine cache files
+DerivedDataCache/
+LocalDerivedDataCache/
+
+game_temp/
+UnrealHeaderTool.manifest
+*.gpulog
+
+# Ignore Python virtual environments
+venv/
+*.pyc
+__pycache__/
